@@ -11,7 +11,7 @@ export namespace Mailer {
         recipients?: [string];
         ccRecipients?: [string];
         bccRecipients?: [string];
-        attachment?: {
+        attachments?: [{
             /**
              * The absolute path of the file from which to read data.
              */
@@ -24,7 +24,7 @@ export namespace Mailer {
              * Optional: Custom filename for attachment
              */
             name?: string;
-        };
+        }];
     }, callback: (
         error: string,
         /**
