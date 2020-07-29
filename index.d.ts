@@ -27,10 +27,10 @@ export namespace Mailer {
         }];
     }, callback: (
         error: string,
-        /**
-         * On Android, the callback will only be called if an error occurs. The event argument is unused!
-         */
-        event: string
+        
+            event: 'launched' | //android only 
+                    'sent' | 'saved' | 'cancelled' | 'failed' // ios only
+                    | 'error'
     ) => void): void;
 }
 

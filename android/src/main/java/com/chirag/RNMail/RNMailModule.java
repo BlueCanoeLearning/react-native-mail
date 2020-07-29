@@ -125,6 +125,8 @@ public class RNMailModule extends ReactContextBaseJavaModule {
       } catch (Exception ex) {
         callback.invoke("error");
       }
+
+      callback.invoke("launched");
     }
   }
 }

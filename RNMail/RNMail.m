@@ -166,10 +166,10 @@ RCT_EXPORT_METHOD(mail:(NSDictionary *)options
                 callback(@[[NSNull null] , @"cancelled"]);
                 break;
             case MFMailComposeResultFailed:
-                callback(@[@"failed"]);
+                callback(@[RCTNullIfNil(error), @"failed"]);
                 break;
             default:
-                callback(@[@"error"]);
+                callback(@[RCTNullIfNil(error), @"error"]);
                 break;
         }
         [_callbacks removeObjectForKey:key];
