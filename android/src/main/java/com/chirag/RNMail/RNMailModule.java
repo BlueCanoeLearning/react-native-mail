@@ -101,6 +101,15 @@ public class RNMailModule extends ReactContextBaseJavaModule {
        i.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
      }
 
+     if (options.hasKey("attachment") && !options.isNull("attachment")) {
+      ReadableMap attachment = options.getMap("attachment");
+      if (attachment.hasKey("path") && !attachment.isNull("path")) {
+        String path = attachment.getString("path");
+        File file = new File(path);
+        Uri p = Uri.fromFile(file);
+        i.putExtra(Intent.EXTRA_STREAM, p);
+      }
+
     PackageManager manager = reactContext.getPackageManager();
     List<ResolveInfo> list = manager.queryIntentActivities(i, 0);
 

@@ -11,6 +11,24 @@ export namespace Mailer {
         recipients?: [string];
         ccRecipients?: [string];
         bccRecipients?: [string];
+
+        /** ANDROID ONLY */
+        attachment?: {
+            /**
+             * The absolute path of the file from which to read data.
+             */
+            path: string;
+            /**
+             * Mime Type: jpg, png, doc, ppt, html, pdf, csv
+             */
+            type: string;
+            /**
+             * Optional: Custom filename for attachment
+             */
+            name?: string;
+        };
+
+        /** IOS ONLY */
         attachments?: [{
             /**
              * The absolute path of the file from which to read data.
