@@ -109,6 +109,7 @@ public class RNMailModule extends ReactContextBaseJavaModule {
         Uri p = Uri.fromFile(file);
         i.putExtra(Intent.EXTRA_STREAM, p);
       }
+    }
 
     PackageManager manager = reactContext.getPackageManager();
     List<ResolveInfo> list = manager.queryIntentActivities(i, 0);
