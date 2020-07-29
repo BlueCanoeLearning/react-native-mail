@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.dependency 'React'
 
   s.subspec 'Core' do |ss|
-    ss.source_files     = "ios/*.{h,m,swift}"
+    ss.source_files     = "RNMail/*.{h,m,swift}"
   end
 
 end
